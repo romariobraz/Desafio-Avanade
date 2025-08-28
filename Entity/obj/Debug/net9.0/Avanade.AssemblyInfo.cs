@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Avanade")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c00f144ea6c82a57b9cecc4a4cd4e83d75f6998")]
 [assembly: System.Reflection.AssemblyProductAttribute("Avanade")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Avanade")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

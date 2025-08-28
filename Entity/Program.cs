@@ -1,4 +1,5 @@
-﻿using Avanade.Contexto;
+﻿#region Imports
+using Avanade.Contexto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -10,8 +11,12 @@ using System.Text;
 using Avanade.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+#endregion
 
+#region Builders, key e swagger
+//Inicio das builder
 var builder = WebApplication.CreateBuilder(args);
+//Key para JWT
 var key = Encoding.ASCII.GetBytes(Settings.Secret);
 
 // Configura o DbContext com PostgreSQL
@@ -21,7 +26,7 @@ builder.Services.AddDbContext<ProdutoContexto>(options =>
 builder.Services.AddDbContext<VendasContexto>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("ConexaoPostgres1"))
 );
-
+//Controllers e Swagger
 builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
@@ -32,7 +37,7 @@ builder.Services.AddSwaggerGen(c =>
     // Adiciona o esquema de autenticação Bearer
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authorization header usando Bearer. Exemplo: 'Bearer {token}'",
+        Description = "JWT Auth header Bearer.",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
@@ -62,6 +67,7 @@ builder.Services.AddAuthentication(options =>
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     }).AddJwtBearer(x =>
     {
+        //Configurações do token Jwt
         x.RequireHttpsMetadata = false;
         x.SaveToken = true;
         x.TokenValidationParameters = new TokenValidationParameters
@@ -79,19 +85,23 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Minha API V1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
         c.RoutePrefix = string.Empty;
     });
 }
+#endregion
 
+#region Middlewares
+// Middleware (redirecionamento, autenticação, autorização e mapeamento de controladores)
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
 app.MapGet("/", () => "API de Vendas e Produtos");
+#endregion
 
+#region Usuários, login e JWT
 // Endpoint de login que gera JWT
 app.MapPost("/login", ([FromBody] Users loginDTO) =>
 {
@@ -101,9 +111,8 @@ app.MapPost("/login", ([FromBody] Users loginDTO) =>
 
     if (user == null)
         return Results.Unauthorized();
-
     // Geração do token JWT
-    var key = Encoding.ASCII.GetBytes(Settings.Secret); // mesma chave usada no AddJwtBearer
+    var key = Encoding.ASCII.GetBytes(Settings.Secret);
     var tokenHandler = new JwtSecurityTokenHandler();
     var tokenDescriptor = new SecurityTokenDescriptor
     {
@@ -124,12 +133,17 @@ app.MapPost("/login", ([FromBody] Users loginDTO) =>
     // Retorna o token para o cliente
     return Results.Ok(new { token = jwt });
 });
+#endregion
 
-//Endpoint protegido que retorna produtos
+#region Endpoint do admin e teste rápido
+//Apenas para admin
+app.MapGet("/admin", [Authorize(Roles = "Admin")] () => Results.Ok("Acesso liberado para Admin!"));
 
-app.MapGet("/produtos Exemplo", [Authorize] () =>
+//Endpoint protegido de teste rápido
+app.MapGet("/teste-rapido-auth", [Authorize] () =>
 {
-    return Results.Ok(new[] { "Produto 1", "Produto 2" });
+    return Results.Ok(new[] { "Você está autenticado!" });
 });
+#endregion
 
 app.Run();

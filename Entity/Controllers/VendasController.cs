@@ -16,6 +16,8 @@ namespace Avanade.Controllers
         {
             _Contexto = contexto;
         }
+
+        #region Criar Pedido com movimentações no estoque
         //Criar Pedido
         [HttpPost]
         public IActionResult CriarPedido([FromBody]Pedido pedido)
@@ -52,7 +54,7 @@ namespace Avanade.Controllers
             pedido.Data_Pedido = DateTime.Now;
             pedido.Valor_Total = valorTotal;
 
-            //Ajusta para UTC
+            //Ajusta data para UTC
             pedido.Data_Pedido = DateTime.SpecifyKind(pedido.Data_Pedido, DateTimeKind.Utc);
 
             _Contexto.Pedidos.Add(pedido);
@@ -73,6 +75,9 @@ namespace Avanade.Controllers
 
             return Ok(pedido);
         }
+        #endregion
+
+        #region Consultar Pedido
         //Consultar Pedido
         [HttpGet("{id}")]
         public IActionResult ConsultarPedido(int id)
@@ -84,6 +89,6 @@ namespace Avanade.Controllers
             }
             return Ok(pedido);
         }
-
+        #endregion
     }
 }

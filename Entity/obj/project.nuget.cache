@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZyAl1mb2Q7Q=",
+  "dgSpecHash": "nMjOtzGaHEU=",
   "success": true,
-  "projectFilePath": "D:\\Arquivos\\GitHub\\Desafio Avanade\\Entity\\Avanade.csproj",
+  "projectFilePath": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\Avanade.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\M4x\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\M4x\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.8\\microsoft.aspnetcore.authentication.jwtbearer.9.0.8.nupkg.sha512",

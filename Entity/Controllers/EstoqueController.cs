@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Avanade.Controllers
 {
     [ApiController]
-    [Authorize]
+    [Authorize] //para todos os métodos deste controller
     [Route("[Controller]")]
     public class EstoqueController : ControllerBase
     {
@@ -15,7 +15,7 @@ namespace Avanade.Controllers
         {
             _Contexto = contexto;
         }
-        //validação
+        #region Cadastro
         //cadastrar produto
         [HttpPost]
         public IActionResult CadastrarProduto(Produto produto)
@@ -29,6 +29,9 @@ namespace Avanade.Controllers
             _Contexto.SaveChanges();
             return CreatedAtAction(nameof(ObterProdutoPorId), new { id = produto.Id_Produto }, produto);
         }
+        #endregion
+
+        #region Atualizar
         //atualizar produto
         [HttpPut("{id}")]
         public IActionResult AtualizarProduto(int id, [FromBody] Produto produto)
@@ -50,6 +53,9 @@ namespace Avanade.Controllers
             _Contexto.SaveChanges();
             return NoContent();
         }
+        #endregion
+
+        #region Obter por Id
         //Obter um produto por id
         [HttpGet("{id}")]
         public IActionResult ObterProdutoPorId(int id)
@@ -61,5 +67,6 @@ namespace Avanade.Controllers
             }
             return Ok(produto);
         }
+        #endregion
     }
 }
