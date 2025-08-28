@@ -70,10 +70,13 @@ O sistema será composto por **dois microserviços**, com comunicação via
 ## 📂 Estrutura Básica
 
 ``` bash
-📦 projeto-ecommerce-microservicos
- ┣ 📂 estoque-service
- ┣ 📂 vendas-service
- ┣ 📂 api-gateway
- ┣ 📂 shared (DTOs, configs, utils)
- ┗ 📜 README.md
+📦 Avanade
+ ┣ 📂 BD
+ ┣ 📂 Contexto
+ ┣ 📂 Controllers
+ ┣ 📂 DTOs
+ ┣ 📂 Migrations
+ ┣ 📂 RabbitMQ
+ ┣ 📜 Program.cs
+ ┗ 📜 appsettings.json
 ```
