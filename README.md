@@ -27,28 +27,28 @@ O sistema será composto por **dois microserviços**, com comunicação via
 
 ### 📦 Microserviço 1 - Gestão de Estoque
 
--   📝 **Cadastro de Produtos**: nome, descrição, preço e quantidade.\
+-   📝 **Cadastro de Produtos**: nome, descrição, preço e quantidade.
 -   🔍 **Consulta de Produtos**: catálogo de produtos + quantidade
-    disponível.\
+    disponível.
 -   🔄 **Atualização de Estoque**: redução do estoque ao ocorrer uma
     venda.
 
 ### 🛒 Microserviço 2 - Gestão de Vendas
 
 -   🆕 **Criação de Pedidos**: validação do estoque antes de confirmar a
-    compra.\
--   📜 **Consulta de Pedidos**: status dos pedidos realizados.\
+    compra.
+-   📜 **Consulta de Pedidos**: status dos pedidos realizados.
 -   📢 **Notificação de Venda**: envio de evento ao estoque para reduzir
     a quantidade.
 
 ### 🌉 API Gateway
 
--   Único ponto de entrada da aplicação.\
+-   Único ponto de entrada da aplicação.
 -   Roteia as requisições para o microserviço correto.
 
 ### 📬 RabbitMQ
 
--   Comunicação **assíncrona** entre os microserviços.\
+-   Comunicação **assíncrona** entre os microserviços.
 -   Usado para envio de notificações de vendas que impactam o estoque.
 
 ### 🔒 Autenticação com JWT
