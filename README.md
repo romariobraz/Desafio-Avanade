@@ -1,52 +1,79 @@
-Entendendo Desafio Técnico - Microserviços
-Descrição do Desafio
-Desenvolver uma aplicação com arquitetura de microserviços para gerenciamento de estoque de produtos e vendas em uma plataforma de e-commerce. O sistema será composto por dois microserviços: um para gerenciar o estoque de produtos e outro para gerenciar as vendas, com comunicação entre os serviços via API Gateway. 
+# 🚀 Desafio Técnico - Microserviços
 
-Tecnologias: .NET Core, C#, Entity Framework, RESTful API, RabbitMQ, JWT e banco de dados relacional (Na ocasião usei PostgreSQL).
-<img width="587" height="564" alt="image" src="https://github.com/user-attachments/assets/0fe3c2db-9b1a-40d6-b375-491aeeb4cf64" />
-Arquitetura Proposta 
-Microserviço 1 (Gestão de Estoque): 
-Responsável por cadastrar produtos, controlar o estoque e fornecer informações sobre a quantidade disponível. 
+## 📌 Descrição do Desafio
 
-Microserviço 2 (Gestão de Vendas): 
-Responsável por gerenciar os pedidos e interagir com o serviço de estoque para verificar a disponibilidade de produtos ao realizar uma venda. 
+Desenvolver uma aplicação com **arquitetura de microserviços** para
+gerenciamento de **estoque de produtos** e **vendas** em uma plataforma
+de e-commerce.
 
-API Gateway: 
-Roteamento das requisições para os microserviços adequados. Este serviço atua como o ponto de entrada para todas as chamadas de API. 
+O sistema será composto por **dois microserviços**, com comunicação via
+**API Gateway** e mensageria com **RabbitMQ**.
 
-RabbitMQ: 
-Usado para comunicação assíncrona entre os microserviços, como notificações de vendas que impactam o estoque. 
+------------------------------------------------------------------------
 
-Autenticação com JWT: 
-Garantir que somente usuários autenticados possam realizar ações de vendas ou consultar o estoque.
+## 🛠️ Tecnologias Utilizadas
 
-Funcionalidades Requeridas
-Microserviço 1 (Gestão de Estoque): 
+-   ⚙️ **.NET Core / C#**
+-   🗄️ **Entity Framework**
+-   🌐 **RESTful API**
+-   📩 **RabbitMQ**
+-   🔑 **JWT (JSON Web Token)**
+-   🐘 **PostgreSQL** (banco relacional)
+-   🚪 **API Gateway**
 
-Cadastro de Produtos: Adicionar novos produtos com nome, descrição, preço e quantidade em estoque. 
+------------------------------------------------------------------------
 
-Consulta de Produtos: Permitir que o usuário consulte o catálogo de produtos e a quantidade disponível em estoque. 
+## 🏗️ Arquitetura Proposta
 
-Atualização de Estoque: O estoque deve ser atualizado quando ocorrer uma venda (integração com o Microserviço de Vendas). 
+### 📦 Microserviço 1 - Gestão de Estoque
 
-Microserviço 2 (Gestão de Vendas): 
+-   📝 **Cadastro de Produtos**: nome, descrição, preço e quantidade.\
+-   🔍 **Consulta de Produtos**: catálogo de produtos + quantidade
+    disponível.\
+-   🔄 **Atualização de Estoque**: redução do estoque ao ocorrer uma
+    venda.
 
-Criação de Pedidos: Permitir que o cliente faça um pedido de venda, com a validação do estoque antes de confirmar a compra. 
+### 🛒 Microserviço 2 - Gestão de Vendas
 
-Consulta de Pedidos: Permitir que o usuário consulte o status dos pedidos realizados. 
+-   🆕 **Criação de Pedidos**: validação do estoque antes de confirmar a
+    compra.\
+-   📜 **Consulta de Pedidos**: status dos pedidos realizados.\
+-   📢 **Notificação de Venda**: envio de evento ao estoque para reduzir
+    a quantidade.
 
-Notificação de Venda: Quando um pedido for confirmado, o serviço de vendas deve notificar o serviço de estoque sobre a redução do estoque. 
+### 🌉 API Gateway
 
-Comum aos dois microserviços: 
+-   Único ponto de entrada da aplicação.\
+-   Roteia as requisições para o microserviço correto.
 
-Autenticação via JWT: Apenas usuários autenticados podem interagir com os sistemas de vendas ou consultar o estoque. 
+### 📬 RabbitMQ
 
-API Gateway: Usar um gateway para centralizar o acesso à API, garantindo que as requisições sejam direcionadas ao microserviço correto
+-   Comunicação **assíncrona** entre os microserviços.\
+-   Usado para envio de notificações de vendas que impactam o estoque.
 
-Status Atual:
+### 🔒 Autenticação com JWT
 
-Projeto finalizado com sucesso.
+-   Apenas usuários **autenticados** podem:
+    -   Realizar vendas 🛍️\
+    -   Consultar estoque 📦
 
-Sintaxe do projeto sendo melhorada.
+------------------------------------------------------------------------
 
-Testes em desenvolvimento.
+## ✅ Status Atual
+
+-   🎯 **Projeto finalizado com sucesso**\
+-   ✨ **Sintaxe do projeto sendo melhorada**\
+-   🧪 **Testes em desenvolvimento**
+
+------------------------------------------------------------------------
+
+## 📂 Estrutura Básica
+
+``` bash
+📦 projeto-ecommerce-microservicos
+ ┣ 📂 estoque-service
+ ┣ 📂 vendas-service
+ ┣ 📂 api-gateway
+ ┣ 📂 shared (DTOs, configs, utils)
+ ┗ 📜 README.md
+```
