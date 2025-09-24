@@ -18,6 +18,22 @@
     ]
   },
   {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_8",
+    "RelativePath": "admin",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Avanade.Controllers.EstoqueController",
     "Method": "CadastrarProduto",
     "RelativePath": "Estoque",
@@ -94,8 +110,8 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_8",
-    "RelativePath": "produtos Exemplo",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_9",
+    "RelativePath": "teste-rapido-auth",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,

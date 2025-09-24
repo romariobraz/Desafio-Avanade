@@ -46,7 +46,19 @@
         }
       }
     },
-    "/produtos Exemplo": {
+    "/admin": {
+      "get": {
+        "tags": [
+          "Avanade"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/teste-rapido-auth": {
       "get": {
         "tags": [
           "Avanade"
@@ -347,7 +359,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "http",
-        "description": "JWT Authorization header usando Bearer. Exemplo: 'Bearer {token}'",
+        "description": "JWT Auth header Bearer.",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }

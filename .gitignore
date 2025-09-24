@@ -1,0 +1,51 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.userprefs
+*.pidb
+*.sdf
+*.dbmdl
+*.opendb
+*.VC.db
+
+# Build Folders
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.orig
+
+# Pacotes NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Publicação / deployment
+*.publish.xml
+*.azurePubxml
+*.publishsettings
+
+# Restrições específicas do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Arquivos gerado

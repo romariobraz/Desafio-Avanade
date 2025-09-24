@@ -6,7 +6,7 @@
         {
             var users = new List<Users>
             {
-                new Users { ID_Usuario = 1, Usuario = "admin", Senha = "admin", Role = "Admin" },
+                new Users { ID_Usuario = 1, Usuario = "admin", Senha = "admin", Role = "admin" },
                 new Users { ID_Usuario = 2, Usuario = "user", Senha = "user", Role = "User" }
             };
 

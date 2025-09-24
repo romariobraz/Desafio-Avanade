@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{980D0E9B-B9CB-03B6-D34C-75B708D1B47E}|Avanade.csproj|d:\\arquivos\\github\\desafio-avanade\\entity\\dtos\\dadoslogin\\userrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{980D0E9B-B9CB-03B6-D34C-75B708D1B47E}|Avanade.csproj|solutionrelative:dtos\\dadoslogin\\userrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{980D0E9B-B9CB-03B6-D34C-75B708D1B47E}|Avanade.csproj|d:\\arquivos\\github\\desafio-avanade\\entity\\dtos\\dadoslogin\\chave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{980D0E9B-B9CB-03B6-D34C-75B708D1B47E}|Avanade.csproj|solutionrelative:dtos\\dadoslogin\\chave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{980D0E9B-B9CB-03B6-D34C-75B708D1B47E}|Avanade.csproj|d:\\arquivos\\github\\desafio-avanade\\entity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{980D0E9B-B9CB-03B6-D34C-75B708D1B47E}|Avanade.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +27,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserRep.cs",
+              "DocumentMoniker": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\DTOs\\DadosLogin\\UserRep.cs",
+              "RelativeDocumentMoniker": "DTOs\\DadosLogin\\UserRep.cs",
+              "ToolTip": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\DTOs\\DadosLogin\\UserRep.cs",
+              "RelativeToolTip": "DTOs\\DadosLogin\\UserRep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T20:04:03.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Chave.cs",
+              "DocumentMoniker": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\DTOs\\DadosLogin\\Chave.cs",
+              "RelativeDocumentMoniker": "DTOs\\DadosLogin\\Chave.cs",
+              "ToolTip": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\DTOs\\DadosLogin\\Chave.cs",
+              "RelativeToolTip": "DTOs\\DadosLogin\\Chave.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T20:03:52.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Arquivos\\GitHub\\Desafio-Avanade\\Entity\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
